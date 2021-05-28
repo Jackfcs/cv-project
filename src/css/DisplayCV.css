@@ -1,0 +1,49 @@
+.cv-display-container {
+    border: solid black 1px;
+    height: 297mm;
+    text-align: left;
+}
+
+.leftBar {
+    margin: 0;
+    background-color: rgb(18, 65, 109);
+    color: white;
+    width: 30%;
+    min-height: 297mm;
+    max-height: 297mm;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.nameD {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.professionD {
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px 0 20px 0; 
+}
+
+.titleLeft {
+    background-color: rgb(78, 82, 133);
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    vertical-align: center;
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+    
+}
+
+.contactTitle {
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.hide {
+    display: none;
+}
