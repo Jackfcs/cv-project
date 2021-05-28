@@ -7,7 +7,7 @@ class DisplayCV extends Component {
     super();
     this.state = {
         viewing: "preview",
-        buttonText: "View Your CV",
+        buttonText: "Preview Your CV",
         preview: {
             firstName: "Joe",
             lastName: "Bloggs",
@@ -25,10 +25,10 @@ class DisplayCV extends Component {
 
   whichView(key){
     if (this.state.viewing === "preview"){
-        return this.state.preview.[key]
+        return this.state.preview[key]
     } else if (this.state.viewing === "custom") {
         
-        return this.props.inputs.[key]
+        return this.props.inputs[key]
     }
   }
 
@@ -41,7 +41,7 @@ class DisplayCV extends Component {
       } else {
         this.setState({
             viewing: "preview",
-            buttonText: "View Your CV"
+            buttonText: "Preview Your CV"
         })
       }
   }
@@ -64,9 +64,9 @@ class DisplayCV extends Component {
                     <div className="contactTitle">Contact</div>
                 </div>
                 
-                <div className="cityPostD">, </div>
-                <div className="phoneD"></div>
-                <div className="emaildD"></div>
+                <div className="cityPostD">{whichView("city")}, {whichView("postCode")}</div>
+                <div className="phoneD">{whichView("phone")}</div>
+                <div className="emaildD">{whichView("email")}</div>
             </div>
         </div>
       </div>
