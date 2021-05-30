@@ -1,6 +1,6 @@
 .cv-display-container {
     border: solid black 1px;
-    height: 297mm;
+    max-height: 296.45mm;
     min-width: 210mm;
     max-width: 210mm;
     text-align: left;
