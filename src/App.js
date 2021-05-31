@@ -1,15 +1,15 @@
-import "./App.css";
+import "./css/App.css";
 import React, { Component } from "react";
-import PersonalInfo from "./components/CVSections/PersonalInfo";
+import PersonalInfo from "./components/CVSectionQuestions/PersonalInfo";
 import Header from "./components/Header";
-import DisplayCV from "./components/DisplayCV";
-import Button from './components/Button'
+import DisplayCV from "./components/DisplayCVSections/DisplayCV";
+import Button from "./components/Button";
+import Summary from "./components/Summary"
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
-        
       inputs: {
         firstName: "",
         lastName: "",
@@ -18,13 +18,20 @@ class App extends Component {
         postCode: "",
         phone: "",
         email: "",
+        summary: "",
+        workExperience: [{jobTitle: "", 
+                          employer: "",
+                          startDate: "", 
+                          endDate: "", 
+                          points: [""]
+                        }]
       },
-      className: '',
-      buttonText: "Submit"
+      className: "",
+      buttonText: "Submit",
     };
 
-    this.handleChange = this.handleChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange(e, component) {
@@ -35,32 +42,45 @@ class App extends Component {
         [e.target.name]: value,
       },
     });
+    console.log(value)
   }
 
-  onSubmit(){
-    if (this.state.className === ""){
+  onSubmit() {
+    if (this.state.className === "") {
       this.setState({
         className: "hide",
-        buttonText : "Edit"
-      }) 
-      
+        buttonText: "Edit",
+      });
     } else {
-      this.setState ({
+      this.setState({
         className: "",
-        buttonText: "Submit"
-      })
+        buttonText: "Submit",
+      });
     }
   }
 
-  render(){
-    console.log(window)
-  
+  render() {
     return (
-      <div className="App">
+      <div>
         <Header />
-        <PersonalInfo className={this.state.className} handleChange={(e) => this.handleChange(e, this)}/>
-        <Button text={this.state.buttonText} onSubmit={this.onSubmit}/>
-        <DisplayCV inputs={this.state.inputs}/>
+        <div className="App">
+          <div className="inputs-container">
+            <PersonalInfo
+              className={this.state.className}
+              handleChange={(e) => this.handleChange(e, this)}
+            />
+            <Summary 
+              handleChange={(e) => this.handleChange(e, this)}
+            />
+            <Button 
+              text={this.state.buttonText}
+              onSubmit={this.onSubmit} 
+            />
+          </div>
+          <div className="cv-container">
+            <DisplayCV inputs={this.state.inputs} />
+          </div>
+        </div>
       </div>
     );
   }

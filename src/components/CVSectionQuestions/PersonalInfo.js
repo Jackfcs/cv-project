@@ -10,6 +10,7 @@ class PersonalInfo extends Component {
         return (
             
             <div>
+                <h3 className={this.props.className}>Enter your contact information</h3>
                 <Name 
                     className={this.props.className} 
                     handleChange={(e) => this.props.handleChange(e, this)}

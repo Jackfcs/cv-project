@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "../css/Input.css"
 
 class Input extends Component {
     constructor(props){
@@ -16,7 +17,8 @@ class Input extends Component {
         //console.log(this.props)
         return (
             <div>
-                <input className={this.props.className} id={this.props.id} name={this.props.name} type="text" placeholder={this.props.placeholder} onChange= {this.props.handleChange}></input>
+                
+                <input style={this.props.style} className={this.props.className} id={this.props.id} name={this.props.name} type="text" placeholder={this.props.placeholder} onChange= {this.props.handleChange}></input>
             </div>
         )
     }

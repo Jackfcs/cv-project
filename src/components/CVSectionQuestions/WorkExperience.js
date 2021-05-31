@@ -1,20 +1,21 @@
 import React, { Component } from 'react'
-import PersonalInfo from './CVSections/index.js'
-import Button from './Button'
 
-class Body extends Component {
+class WorkExperience extends Component {
     constructor(){
         super()
+        this.state = {
+
+        }
     }
 
 
     render() {
         return (
             <div>
-                <Button />
+                
             </div>
         )
     }
 }
 
-export default Body
+export default WorkExperience

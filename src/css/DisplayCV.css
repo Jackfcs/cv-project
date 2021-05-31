@@ -1,18 +1,32 @@
-.cv-display-container {
+#cv-display-container {
     border: solid black 1px;
-    max-height: 296.45mm;
+    max-height: 296.2mm;
+    min-height: 296.2mm;
     min-width: 210mm;
     max-width: 210mm;
     text-align: left;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.small-view {
+
+    position: absolute;
+    transform: scale(0.5);
+    top: -190px;
+    right: -150px;
+
 }
 
 .leftBar {
     margin: 0;
     background-color: rgb(18, 65, 109);
     color: white;
-    width: 30%;
-    min-height: 297mm;
-    max-height: 297mm;
+    min-width: 30%;
+    min-height: 296.2mm;
+    max-height: 296.2mm;
     padding: 15px;
     box-sizing: border-box;
 }
@@ -25,7 +39,7 @@
 .professionD {
     font-size: 25px;
     font-weight: 100;
-    padding: 10px 0 20px 0; 
+    padding: 10px 0 20px 0;
 }
 
 .titleLeft {
@@ -36,7 +50,7 @@
     display: flex;
     text-align: center;
     margin-bottom: 10px;
-    
+
 }
 
 .contactTitle {
@@ -48,4 +62,36 @@
 
 .hide {
     display: none;
+}
+
+.preview {
+
+    position: absolute;
+    transform: scale(1);
+    right: 50px;
+    z-index: 2;
+
+}
+
+.cv-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.main-content {
+    color: rgb(133, 133, 133);
+    margin: 20px;
+}
+
+.summaryD {
+    padding-top: 10px;
+    padding-bottom: 40px;
+}
+
+.work-history-title {
+    font-size: 25px;
+    border-bottom: rgb(133, 133, 133) solid 0.5px;
+    border-top: rgb(133, 133, 133) solid 0.5px;
+    padding: 5px;
 }
