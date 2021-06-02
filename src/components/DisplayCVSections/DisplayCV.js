@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../../css/DisplayCV.css";
 import Button from "../Button";
 import {format} from 'date-fns'
+import WorkExperienceInstance from "./WorkExperienceInstance";
+import uniqid from "uniqid";
 
 class DisplayCV extends Component {
   constructor(props) {
@@ -23,15 +25,27 @@ class DisplayCV extends Component {
           "Target-driven senior sales negotiator with 10 years experience in luxury home sales. Highly competent in sales progression using all avenues of communication to speed sales process. Accurate valuation skills and sales figures that consistently exceed targets by +15%. Aiming to continue delighting clients with high levels of service.",
         workExperience: [
           {
+            id: uniqid(),
             jobTitle: "Marketing Assistant",
             employer: "Big Red Company",
             startDate: format(new Date(2018, 1, 11), "dd/MM/yyyy"),
             endDate: format(new Date(2020, 1, 11), "dd/MM/yyyy"),
             points: [
-              "Very good at doing the work",
-              "I was promoted to manage 5 people",
+              {id: uniqid(), point: "Very good at doing the work"},
+              {id: uniqid(), point: "I was promoted to manage 5 people"},
             ],
           },
+          {
+            id: uniqid(),
+            jobTitle: "IT Support",
+            employer: "Big Corporation",
+            startDate: format(new Date(2016, 5, 11), "dd/MM/yyyy"),
+            endDate: format(new Date(2018, 1, 11), "dd/MM/yyyy"),
+            points: [
+              {id: uniqid(), point: "Fixed all of the computers"},
+              {id: uniqid(), point: "Was given a gold star every week"},
+            ],
+          }
         ],
       },
     };
@@ -41,7 +55,7 @@ class DisplayCV extends Component {
     this.generatePDF = this.generatePDF.bind(this);
   }
 
-  whichView(key) {
+  whichView(key = '') {
     if (this.state.viewing === "preview") {
       return this.state.preview[key];
     } else if (this.state.viewing === "custom") {
@@ -102,7 +116,6 @@ class DisplayCV extends Component {
 
   render() {
     const { whichView } = this;
-    console.log(this.state.preview.workExperience[0].startDate)
     return (
       <div>
           <div className="cv-buttons">
@@ -131,9 +144,9 @@ class DisplayCV extends Component {
           <div className="main-content">
         <div className="summaryD">{whichView("summary")}</div>
         <div className="work-history-title">Work History</div>
-            <div className="startDateD">{whichView("workExperience.[0].startDate")}</div>
-            <div className="endDateD">{this.state.preview.workExperience[0].endDate}</div>
-            <div className="jobTitleD"></div>
+        <div className="startDateD">{whichView("workExperience.[0].startDate")}</div>
+        <WorkExperienceInstance whichView={whichView} preview={this.state.preview} inputs={this.props.inputs}/>
+            
           </div>
           
         </div>

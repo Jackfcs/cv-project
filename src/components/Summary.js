@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Input from "./Input";
 
 class Summary extends Component {
     constructor(props){
@@ -7,9 +6,12 @@ class Summary extends Component {
     }
 
     render() {
+
+        
         return (
             <div>
-                <Input style={{height: "200px"}} handleChange={(e) => this.props.handleChange(e, this)}  className={this.props.className} name="summary" id="summary" placeholder="Summary"/>
+                <textarea cols="36" rows="10" onChange={(e) => this.props.handleChange(e, this)}  className={this.props.className} name="summary" id="summary" placeholder="Summary"></textarea>
+                
             </div>
         )
     }
