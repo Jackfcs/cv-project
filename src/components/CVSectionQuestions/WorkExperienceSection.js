@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import WorkExperience from './WorkExperience'
 import Button from '../Button'
+import "../../css/WorkExperienceSection.css"
 
 class WorkExperienceSection extends Component {
     constructor(props){
@@ -16,7 +17,7 @@ class WorkExperienceSection extends Component {
                     deletePoint={(e) => this.props.deletePoint(e)}
                     addPoint={(e) => this.props.addPoint(e)}  
                     captureWE={(e) => this.props.captureWE(e) } 
-                    captureTask={(e) => this.props.captureTask(e)}
+                    captureTask={(e, index) => this.props.captureTask(e, index)}
                 />
                 <Button text="Delete Work Experience" />
                 <Button text="Add Work Experience" />

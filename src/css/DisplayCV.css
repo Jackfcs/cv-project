@@ -89,7 +89,7 @@
 
 .summaryD {
     padding-top: 10px;
-    padding-bottom: 40px;
+    padding-bottom: 30px;
 }
 
 .work-history-title {
@@ -97,4 +97,5 @@
     border-bottom: rgb(133, 133, 133) solid 0.5px;
     border-top: rgb(133, 133, 133) solid 0.5px;
     padding: 5px;
+    margin-bottom: 20px;
 }

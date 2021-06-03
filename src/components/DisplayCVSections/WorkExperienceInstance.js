@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../../css/WorkExperienceInstance.css"
 
 class WorkExperienceInstance extends Component {
   constructor(props) {
@@ -12,16 +13,20 @@ class WorkExperienceInstance extends Component {
       <div>
         {result.map((item) => {
           return (
-            <div key={item.id}>
-              <div>{item.startDate}</div>
-              <div>{item.endDate}</div>
-              <div>{item.employer}</div>
-              <div>{item.jobTitle}</div>
-              <ul>
+            <div className="WE" key={item.id}>
+              <div className="dates">
+                <div className="start">{item.startDate} -</div>
+                <div className="end">{item.endDate}</div>
+              </div>
+              <div className="info">
+              <div className="employer">{item.employer}</div>
+              <div className="job">{item.jobTitle}</div>
+              <ul className="list">
                 {item.points.map((point) => {
                   return <li key={point.id}>{point.point}</li>;
                 })}
               </ul>
+              </div>
             </div>
           );
         })}

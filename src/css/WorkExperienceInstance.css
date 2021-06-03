@@ -1,0 +1,29 @@
+.WE {
+    display: flex;
+    flex-direction: row;
+}
+
+.start{
+    margin-bottom: 5px;
+}
+
+.dates {
+    flex-grow: 1;
+    font-weight: lighter;
+}
+
+.info {
+    flex-grow: 4;
+}
+
+.employer {
+    font-size: 30;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.list {
+    position: relative;
+    right: 20px;
+    bottom: 10px;
+}

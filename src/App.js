@@ -105,10 +105,10 @@ class App extends Component {
     
   }
 
-  captureTask(e, position) {
+  captureTask(e, index) {
     let workExperience = [...this.state.inputs.workExperience];
     let clonedWEInstance = { ...workExperience[0] };
-    clonedWEInstance.points[0].point = e.target.value;
+    clonedWEInstance.points[index].point = e.target.value;
     workExperience[0].points = clonedWEInstance.points;
     this.setState({
       inputs: {
@@ -116,8 +116,8 @@ class App extends Component {
         workExperience,
       },
     });
-    console.log('in fuinction', position)
-  }
+    console.log('out function', index)
+    }
 
   onSubmit() {
     if (this.state.className === "") {
@@ -149,7 +149,7 @@ class App extends Component {
               addPoint={(e) => this.addPoint(e)}
               deletePoint={(e) => this.deletePoint(e)}
               captureWE={(e) => this.captureWE(e)}
-              captureTask={(e) => this.captureTask(e)}
+              captureTask={(e, index) => this.captureTask(e, index)}              
               points={this.state.inputs.workExperience[0].points}
             />
             <Button text={this.state.buttonText} onSubmit={this.onSubmit} />
