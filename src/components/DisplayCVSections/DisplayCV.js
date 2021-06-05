@@ -3,7 +3,9 @@ import "../../css/DisplayCV.css";
 import Button from "../Button";
 import {format} from 'date-fns'
 import WorkExperienceInstance from "./WorkExperienceInstance";
+import EducationInstance from "./EducationInstance"
 import uniqid from "uniqid";
+import Skills from "./Skills"
 
 class DisplayCV extends Component {
   constructor(props) {
@@ -28,8 +30,8 @@ class DisplayCV extends Component {
             id: uniqid(),
             jobTitle: "Marketing Assistant",
             employer: "Big Red Company",
-            startDate: format(new Date(2018, 1, 11), "dd/MM/yyyy"),
-            endDate: format(new Date(2020, 1, 11), "dd/MM/yyyy"),
+            startDate: format(new Date(2018, 1, 11), "MM/yyyy"),
+            endDate: format(new Date(2020, 1, 11), "MM/yyyy"),
             points: [
               {id: uniqid(), point: "Very good at doing the work"},
               {id: uniqid(), point: "I was promoted to manage 5 people"},
@@ -39,14 +41,25 @@ class DisplayCV extends Component {
             id: uniqid(),
             jobTitle: "IT Support",
             employer: "Big Corporation",
-            startDate: format(new Date(2016, 5, 11), "dd/MM/yyyy"),
-            endDate: format(new Date(2018, 1, 11), "dd/MM/yyyy"),
+            startDate: format(new Date(2016, 5, 11), "MM/yyyy"),
+            endDate: format(new Date(2018, 1, 11), "MM/yyyy"),
             points: [
               {id: uniqid(), point: "Fixed all of the computers"},
               {id: uniqid(), point: "Was given a gold star every week"},
             ],
           }
         ],
+        education: [
+          {
+            qualification: "Computer Science",
+            grade: "2:1",
+            school: "Really Great University",
+            startDate: format(new Date(2013, 3, 11), "MM/yyyy"),
+            endDate: format(new Date(2015, 5, 11), "MM/yyyy"),
+
+          }
+        ],
+        skills: ["Microsoft Office", "Javascript"]
       },
     };
     this.whichView = this.whichView.bind(this);
@@ -138,15 +151,20 @@ class DisplayCV extends Component {
                 {whichView("city")}, {whichView("postCode")}
               </div>
               <div className="phoneD">{whichView("phone")}</div>
-              <div className="emaildD">{whichView("email")}</div>
+              <div className="emailD">{whichView("email")}</div>
             </div>
+            <div className="titleLeft">
+                <div className="contactTitle">Skills</div>
+              </div>
+            <Skills whichView={whichView} preview={this.state.preview.skills} inputs={this.props.inputs.skills}/>
           </div>
           <div className="main-content">
         <div className="summaryD">{whichView("summary")}</div>
         <div className="work-history-title">Work History</div>
-        <div className="startDateD">{whichView("workExperience.[0].startDate")}</div>
-        <WorkExperienceInstance whichView={whichView} preview={this.state.preview} inputs={this.props.inputs}/>
-            
+        <WorkExperienceInstance whichView={whichView} preview={this.state.preview.workExperience} inputs={this.props.inputs.workExperience}/>
+            <div className="work-history-title">Education</div>
+        <EducationInstance whichView={whichView} preview={this.state.preview.education} inputs={this.props.inputs.education}/>
+        
           </div>
           
         </div>

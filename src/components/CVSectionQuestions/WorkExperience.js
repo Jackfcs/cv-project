@@ -10,43 +10,51 @@ class WorkExperience extends Component {
         }
     }
 
-    createList(point, index){
-        return <Input key={point.id} handleChange={(e) => this.props.captureTask(e, index)}  placeholder="Add role information"/>
-    }
+    
    
 
     render() {
+        
+
+        
 
         return (
+            
             <div>
+
                 <form>
                     <label>
                         Start Date
-                    <input onChange={(e) => this.props.captureWE(e)} type="date" name="startDate"></input>
+                    <input onChange={(e) => this.props.captureWEDate(e)} type="month" name="startDate"></input>
                     </label>
                     <br/>
                     <label>
                         End Date
-                    <input onChange={(e) => this.props.captureWE(e)} type="date" name="endDate"></input>
+                    <input onChange={(e) => this.props.captureWEDate(e)} type="month" name="endDate"></input>
                     </label>
                     <Input handleChange={(e) => this.props.captureWE(e)} name="jobTitle" placeholder="Job Title"/>
                     <Input handleChange={(e) => this.props.captureWE(e)} name="employer"  placeholder="Employer"/>
                     <div>Add Tasks</div>
 
                     
-                    
+
                     <div>
-                        
-                        
-                        {this.props.points.map((point, index) => {
-                            
-                            
-                            return <Input key={point.id} handleChange={(e) => this.props.captureTask(e, index)}  placeholder={"Add role information "}/>
-                        })}
+                        {this.props.WEInstance.points.map(
+                            (point, index) => {
+                            return (
+                                <Input
+                                key={point.id}
+                                handleChange={(e) => this.props.captureTask(e, index, this.props.WEIndex)}
+                                placeholder={"Add role information "}
+                                />
+                            );
+                            }
+                        )}
                     </div>
-                    {/* <Input handleChange={(e) => this.props.captureTask(e, 0)}  placeholder="Add role information"/> */}
+                   
+                    
                     <Button onSubmit={(e) => this.props.addPoint(e)} text="Add item" />
-                    <Button onSubmit={(e) => this.props.deletePoint(e)}text="Delete item" />
+                    <Button onSubmit={(e) => this.props.deletePoint(e,this.props.WEIndex)}text="Delete item" />
                     
 
                 </form>
