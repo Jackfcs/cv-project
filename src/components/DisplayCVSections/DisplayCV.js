@@ -35,6 +35,8 @@ class DisplayCV extends Component {
             points: [
               {id: uniqid(), point: "Very good at doing the work"},
               {id: uniqid(), point: "I was promoted to manage 5 people"},
+              {id: uniqid(), point: "Implemented new marketing initiatives that led to the growth of the department"},
+              {id: uniqid(), point: "Trained and developed relationships with multiple new suppliers"},
             ],
           },
           {
@@ -46,6 +48,8 @@ class DisplayCV extends Component {
             points: [
               {id: uniqid(), point: "Fixed all of the computers"},
               {id: uniqid(), point: "Was given a gold star every week"},
+              {id: uniqid(), point: "The lead IT consultant for a company of over 200 employees"},
+              {id: uniqid(), point: "Introduced initiatives that reduced the time to close IT requests byt over 50%"},
             ],
           }
         ],

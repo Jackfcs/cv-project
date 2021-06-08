@@ -1,6 +1,8 @@
 .WE {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
+
 }
 
 .start{
@@ -8,13 +10,11 @@
 }
 
 .dates {
-    flex-grow: 1;
+    width: 130px;
     font-weight: lighter;
 }
 
-.info {
-    flex-grow: 4;
-}
+
 
 .job {
     font-size: 30;
@@ -26,4 +26,8 @@
     position: relative;
     right: 20px;
     bottom: 10px;
+}
+
+.info{
+    width: 600px;
 }

@@ -21,14 +21,14 @@ class WorkExperienceInstance extends Component {
                 <div className="end">{item.endDate}</div>
               </div>
               <div className="info">
-              <div className="job">{item.jobTitle}</div>
-              <div className="employer">{item.employer}</div>
-              
-              <ul className="list">
-                {item.points.map((point) => {
-                  return <li key={point.id}>{point.point}</li>;
-                })}
-              </ul>
+                <div className="job">{item.jobTitle}</div>
+                <div className="employer">{item.employer}</div>
+                
+                <ul className="list">
+                  {item.points.map((point) => {
+                    return <li key={point.id}>{point.point}</li>;
+                  })}
+                </ul>
               </div>
             </div>
           );

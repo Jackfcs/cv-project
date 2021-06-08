@@ -47,14 +47,13 @@ class App extends Component {
         ],
         skills: [""]
       },
-      className: "",
-      buttonText: "Submit",
-      workExperienceCount: 0,
-      pointsCount: 0,
+      buttonText: ["Personal Info", "Summary", "Work Experience", "Education", "Skills"],
+      questionState: 2,
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    this.prevSection = this.prevSection.bind(this);
+    this.nextSection = this.nextSection.bind(this);
     this.captureWE = this.captureWE.bind(this);
     this.captureWEDate = this.captureWEDate.bind(this);
     this.captureTask = this.captureTask.bind(this);
@@ -327,31 +326,39 @@ class App extends Component {
     console.log('we ', we)
     }
 
-  onSubmit() {
-    if (this.state.className === "") {
+  prevSection() {
+    if (this.state.questionState > 1){
       this.setState({
-        className: "hide",
-        buttonText: "Edit",
-      });
-    } else {
-      this.setState({
-        className: "",
-        buttonText: "Submit",
-      });
+        questionState: this.state.questionState - 1
+      })
     }
   }
 
+  nextSection() {
+    if (this.state.questionState < 5){
+      this.setState({
+        questionState: this.state.questionState + 1
+      })
+    }
+  }
+  
+
   render() {
+    
+
     return (
       <div className="body">
         <Header />
         <div className="App">
           <div className="inputs-container">
             <PersonalInfo
-              className={this.state.className}
               handleChange={(e) => this.handleChange(e, this)}
+              questionState={this.state.questionState}
             />
-            <Summary handleChange={(e) => this.handleChange(e, this)} />
+            <Summary 
+              handleChange={(e) => this.handleChange(e, this)} 
+              questionState={this.state.questionState}
+            />
 
             <WorkExperienceSection
               addPoint={(e, index) => this.addPoint(e, index)}
@@ -362,6 +369,7 @@ class App extends Component {
               captureWEDate={(e, index) => this.captureWEDate(e, index)}
               captureTask={(e, index, we) => this.captureTask(e, index, we)}  
               inputs={this.state.inputs}
+              questionState={this.state.questionState}
               
             />
             
@@ -371,14 +379,19 @@ class App extends Component {
               captureEdu={(e, index) => this.captureEdu(e, index)}
               addEdu={(e) => this.addEdu(e)}
               deleteEdu={(e) => this.deleteEdu(e)}
+              questionState={this.state.questionState}
             />
             <SkillsQuestions 
               skills={this.state.inputs.skills}
               captureSkill={(e, index) => this.captureSkill(e, index)}
               addSkill={(e) => this.addSkill(e)}
               deleteSkill={(e) => this.deleteSkill(e)}
+              questionState={this.state.questionState}
             />
-            <Button text={this.state.buttonText} onSubmit={this.onSubmit} />
+            <div className="navigation">
+            <Button text={this.state.buttonText[this.state.questionState]} onSubmit={this.prevSection} />
+            <Button text={this.state.buttonText[this.state.questionState + 1]} onSubmit={this.nextSection} />
+            </div>
           </div>
           <div className="cv-container">
             <DisplayCV inputs={this.state.inputs} />
