@@ -1,6 +1,9 @@
+
+
 .body {
   max-height: 100vh;
   overflow: hidden;
+  font-family:'Tahoma', 'sans-serif';
 }
 
 .App {
@@ -15,12 +18,20 @@
   height: 90vh;
   overflow: auto;
   background: white;
+  width: 400px;
 }
 
-.cv-container {
-  /* align-self: center;
-  justify-self: center;
-  margin-left: -100px;
-  flex-direction: column; */
-  
+.navigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+
+.next-button{
+  justify-self: right;
+}
+
+.prev-button{
+  justify-self: left;
+}
+

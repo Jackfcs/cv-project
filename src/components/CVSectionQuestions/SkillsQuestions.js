@@ -10,10 +10,10 @@ class SkillsQuestions extends Component {
 
     render() {
         let skillsQuestions
-        if (this.props.questionState === 5){
+        if (this.props.questionState === 4){
             skillsQuestions = 
             <div>
-            <div>Skills</div>
+            <h3>Enter your skills</h3>
 
             {this.props.skills.map((skill, index) => {
                 return <Input key={index} handleChange={(e) => this.props.captureSkill(e, index)} placeholder="Add Skill"/>

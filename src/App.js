@@ -48,7 +48,7 @@ class App extends Component {
         skills: [""]
       },
       buttonText: ["Personal Info", "Summary", "Work Experience", "Education", "Skills"],
-      questionState: 2,
+      questionState: 0,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -181,7 +181,7 @@ class App extends Component {
   captureEduDate(e, index){
     let education = [...this.state.inputs.education];
     let clonedEdu = { ...education[index] };
-    clonedEdu[e.target.name] = format(new Date(e.target.value), 'MM/yyyy');
+    clonedEdu[e.target.name] = format(new Date(e.target.value), 'yyyy-MM');
     education[index] = clonedEdu;
 
     this.setState({
@@ -190,7 +190,6 @@ class App extends Component {
         education,
       },
     });
-   // console.log(this.state);
   }
 
   deleteWE(e) {
@@ -231,7 +230,6 @@ class App extends Component {
         workExperience,
       },
     })
-    console.log(this.state.inputs.workExperience)
 
   }
 
@@ -265,7 +263,6 @@ class App extends Component {
         
       },
     });
-    console.log('work experience ', this.state.inputs.workExperience[index]);
   }
 
   handleChange(e, component) {
@@ -299,7 +296,7 @@ class App extends Component {
   captureWEDate(e, index){
     let workExperience = [...this.state.inputs.workExperience];
     let clonedWE = { ...workExperience[index] };
-    clonedWE[e.target.name] = format(new Date(e.target.value), 'MM/yyyy');
+    clonedWE[e.target.name] = format(new Date(e.target.value), 'yyyy-MM');
     workExperience[index] = clonedWE;
 
     this.setState({
@@ -308,7 +305,7 @@ class App extends Component {
         workExperience,
       },
     });
-   // console.log(this.state);
+   
   }
 
   captureTask(e, index, we) {
@@ -327,7 +324,7 @@ class App extends Component {
     }
 
   prevSection() {
-    if (this.state.questionState > 1){
+    if (this.state.questionState > 0){
       this.setState({
         questionState: this.state.questionState - 1
       })
@@ -335,7 +332,7 @@ class App extends Component {
   }
 
   nextSection() {
-    if (this.state.questionState < 5){
+    if (this.state.questionState < 4){
       this.setState({
         questionState: this.state.questionState + 1
       })
@@ -344,18 +341,45 @@ class App extends Component {
   
 
   render() {
+    let prevButton 
+    let nextButton
+
+    if (this.state.questionState >= 1 ) {
+      prevButton = <Button text={"Back to: " +this.state.buttonText[this.state.questionState -1]} onSubmit={this.prevSection} />
+    } else {
+      prevButton = ''
+    }
+
+    if (this.state.questionState <= 3) {
+      nextButton = <Button text={"Next: " + this.state.buttonText[this.state.questionState + 1]} onSubmit={this.nextSection} />
+    } else {
+      nextButton = ''
+    }
     
 
     return (
       <div className="body">
         <Header />
         <div className="App">
+          
           <div className="inputs-container">
+          <div className="navigation">
+            <div className="prev-button">
+              {prevButton}
+            </div>
+            <div className="next-button">
+              {nextButton}
+            </div>
+            
+            
+            </div>
             <PersonalInfo
+              inputs={this.state.inputs}
               handleChange={(e) => this.handleChange(e, this)}
               questionState={this.state.questionState}
             />
             <Summary 
+              summary={this.state.inputs.summary}
               handleChange={(e) => this.handleChange(e, this)} 
               questionState={this.state.questionState}
             />
@@ -388,10 +412,7 @@ class App extends Component {
               deleteSkill={(e) => this.deleteSkill(e)}
               questionState={this.state.questionState}
             />
-            <div className="navigation">
-            <Button text={this.state.buttonText[this.state.questionState]} onSubmit={this.prevSection} />
-            <Button text={this.state.buttonText[this.state.questionState + 1]} onSubmit={this.nextSection} />
-            </div>
+            
           </div>
           <div className="cv-container">
             <DisplayCV inputs={this.state.inputs} />

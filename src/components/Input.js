@@ -17,7 +17,7 @@ class Input extends Component {
         return (
             <div>
                 
-                <input style={this.props.style} className={this.props.className} id={this.props.id} name={this.props.name} type="text" placeholder={this.props.placeholder} onChange={this.props.handleChange}></input>
+                <input style={this.props.style} className={this.props.className} id={this.props.id} name={this.props.name} type="text" placeholder={this.props.placeholder} onChange={this.props.handleChange} value={this.props.value}></input>
             </div>
         )
     }

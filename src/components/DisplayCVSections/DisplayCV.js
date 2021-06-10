@@ -30,8 +30,8 @@ class DisplayCV extends Component {
             id: uniqid(),
             jobTitle: "Marketing Assistant",
             employer: "Big Red Company",
-            startDate: format(new Date(2018, 1, 11), "MM/yyyy"),
-            endDate: format(new Date(2020, 1, 11), "MM/yyyy"),
+            startDate: format(new Date(2018, 1, 11), "yyyy-MM"),
+            endDate: format(new Date(2020, 1, 11), "yyyy-MM"),
             points: [
               {id: uniqid(), point: "Very good at doing the work"},
               {id: uniqid(), point: "I was promoted to manage 5 people"},
@@ -43,8 +43,8 @@ class DisplayCV extends Component {
             id: uniqid(),
             jobTitle: "IT Support",
             employer: "Big Corporation",
-            startDate: format(new Date(2016, 5, 11), "MM/yyyy"),
-            endDate: format(new Date(2018, 1, 11), "MM/yyyy"),
+            startDate: format(new Date(2016, 5, 11), "yyyy-MM"),
+            endDate: format(new Date(2018, 1, 11), "yyyy-MM"),
             points: [
               {id: uniqid(), point: "Fixed all of the computers"},
               {id: uniqid(), point: "Was given a gold star every week"},
@@ -58,8 +58,8 @@ class DisplayCV extends Component {
             qualification: "Computer Science",
             grade: "2:1",
             school: "Really Great University",
-            startDate: format(new Date(2013, 3, 11), "MM/yyyy"),
-            endDate: format(new Date(2015, 5, 11), "MM/yyyy"),
+            startDate: format(new Date(2013, 3, 11), "yyyy-MM"),
+            endDate: format(new Date(2015, 5, 11), "yyyy-MM"),
 
           }
         ],

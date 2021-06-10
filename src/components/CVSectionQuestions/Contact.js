@@ -12,31 +12,31 @@ class Contact extends Component {
     render() {
         return (
             <div>
-                <Input 
-                    className={this.props.className} 
+                <Input
                     id="city" 
                     placeholder="City" 
                     name="city" 
                     handleChange={(e) => this.props.handleChange(e, this)}
+                    value={this.props.inputs.city}
                 />
-                <Input 
-                    className={this.props.className} 
+                <Input  
                     id="postCode" 
                     placeholder="PostCode" 
                     name="postCode" 
-                    handleChange={(e) => this.props.handleChange(e, this)}/>
-                <Input 
-                    className={this.props.className} 
+                    handleChange={(e) => this.props.handleChange(e, this)}
+                    value={this.props.inputs.postCode}/>
+                <Input  
                     id="phone" 
                     placeholder="Phone Number" 
                     name="phone" 
-                    handleChange={(e) => this.props.handleChange(e, this)}/>
+                    handleChange={(e) => this.props.handleChange(e, this)}
+                    value={this.props.inputs.phone}/>
                 <Input 
-                    className={this.props.className} 
                     id="email" 
                     placeholder="Email" 
                     name="email" 
                     handleChange={(e) => this.props.handleChange(e, this)}
+                    value={this.props.inputs.email}
                 />
                 
             </div>

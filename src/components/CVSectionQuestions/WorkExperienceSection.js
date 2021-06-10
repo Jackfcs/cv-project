@@ -10,9 +10,9 @@ class WorkExperienceSection extends Component {
     }
     render() {
         let WES
-        if (this.props.questionState === 3) {
+        if (this.props.questionState === 2) {
             WES = <div>
-            <div>Add Work Experience</div>
+            <h3>Enter your previous work experience</h3>
 
             <div>
                     
@@ -31,6 +31,7 @@ class WorkExperienceSection extends Component {
                                 captureWEDate={(e) => this.props.captureWEDate(e, index)}
                                 captureTask={(e, index, we) => this.props.captureTask(e, index, we)}
                                 inputs={this.props.inputs}
+                                
                                 />
                     })}
                 </div>

@@ -9,9 +9,9 @@ class EducationQuestions extends Component {
 
   render() {
       let educationQuestions
-      if (this.props.questionState === 4){
+      if (this.props.questionState === 3){
           educationQuestions = <div>
-          <div>Education</div>
+          <h3>Enter your education</h3>
           {this.props.inputs.education.map((education, index) => {
             return (
               <div key={index}>
