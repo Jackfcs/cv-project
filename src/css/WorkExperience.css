@@ -1,0 +1,15 @@
+.task-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.we{
+    border-bottom: dashed 1px rgba(0, 0, 0, 0.5);
+}
+
+.form {
+    margin-top: 10px;
+}

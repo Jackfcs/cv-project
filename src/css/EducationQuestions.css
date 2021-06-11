@@ -1,0 +1,18 @@
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.education-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.education-instance{
+    border-bottom: dashed 1px rgba(0, 0, 0, 0.5);
+    margin-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+   
+}

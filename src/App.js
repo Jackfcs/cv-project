@@ -235,7 +235,7 @@ class App extends Component {
 
   deletePoint(e, we){
     e.preventDefault();
-    if(this.state.inputs.workExperience[we].points.length === 1){
+    if(this.state.inputs.workExperience[we].points.length === 0){
       return
     }
     let workExperience = this.state.inputs.workExperience;
@@ -345,13 +345,13 @@ class App extends Component {
     let nextButton
 
     if (this.state.questionState >= 1 ) {
-      prevButton = <Button text={"Back to: " +this.state.buttonText[this.state.questionState -1]} onSubmit={this.prevSection} />
+      prevButton = <Button className="nav" text={"Back to: " +this.state.buttonText[this.state.questionState -1]} onSubmit={this.prevSection} />
     } else {
       prevButton = ''
     }
 
     if (this.state.questionState <= 3) {
-      nextButton = <Button text={"Next: " + this.state.buttonText[this.state.questionState + 1]} onSubmit={this.nextSection} />
+      nextButton = <Button className="nav" text={"Next: " + this.state.buttonText[this.state.questionState + 1]} onSubmit={this.nextSection} />
     } else {
       nextButton = ''
     }
@@ -361,26 +361,21 @@ class App extends Component {
       <div className="body">
         <Header />
         <div className="App">
-          
-          <div className="inputs-container">
+          <div className="nav-and-inputs-container">
           <div className="navigation">
-            <div className="prev-button">
-              {prevButton}
-            </div>
-            <div className="next-button">
-              {nextButton}
-            </div>
-            
-            
-            </div>
+            <div className="prev-button">{prevButton}</div>
+            <div className="next-button">{nextButton}</div>
+          </div>
+
+          <div className="inputs-container">
             <PersonalInfo
               inputs={this.state.inputs}
               handleChange={(e) => this.handleChange(e, this)}
               questionState={this.state.questionState}
             />
-            <Summary 
+            <Summary
               summary={this.state.inputs.summary}
-              handleChange={(e) => this.handleChange(e, this)} 
+              handleChange={(e) => this.handleChange(e, this)}
               questionState={this.state.questionState}
             />
 
@@ -391,28 +386,27 @@ class App extends Component {
               deleteWE={(e) => this.deleteWE(e)}
               captureWE={(e, index, we) => this.captureWE(e, index, we)}
               captureWEDate={(e, index) => this.captureWEDate(e, index)}
-              captureTask={(e, index, we) => this.captureTask(e, index, we)}  
+              captureTask={(e, index, we) => this.captureTask(e, index, we)}
               inputs={this.state.inputs}
               questionState={this.state.questionState}
-              
             />
-            
+
             <EducationQuestions
-              captureEduDate={(e, index) => this.captureEduDate(e, index)} 
+              captureEduDate={(e, index) => this.captureEduDate(e, index)}
               inputs={this.state.inputs}
               captureEdu={(e, index) => this.captureEdu(e, index)}
               addEdu={(e) => this.addEdu(e)}
               deleteEdu={(e) => this.deleteEdu(e)}
               questionState={this.state.questionState}
             />
-            <SkillsQuestions 
+            <SkillsQuestions
               skills={this.state.inputs.skills}
               captureSkill={(e, index) => this.captureSkill(e, index)}
               addSkill={(e) => this.addSkill(e)}
               deleteSkill={(e) => this.deleteSkill(e)}
               questionState={this.state.questionState}
             />
-            
+          </div>
           </div>
           <div className="cv-container">
             <DisplayCV inputs={this.state.inputs} />

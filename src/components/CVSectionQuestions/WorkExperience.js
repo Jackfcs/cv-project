@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Input from "../Input"
 import Button from '../Button'
+import "../../css/WorkExperience.css"
 
 class WorkExperience extends Component {
     constructor(props){
@@ -16,9 +17,9 @@ class WorkExperience extends Component {
     render() {
         return (
             
-            <div>
+            <div className="we">
 
-                <form>
+                <form className="form">
                     <label>
                         Start Date
                     <input  value={this.props.WEInstance.startDate} onChange={(e) => this.props.captureWEDate(e)} type="month" name="startDate"></input>
@@ -49,10 +50,10 @@ class WorkExperience extends Component {
                         )}
                     </div>
                    
-                    
-                    <Button onSubmit={(e) => this.props.addPoint(e)} text="Add item" />
-                    <Button onSubmit={(e) => this.props.deletePoint(e,this.props.WEIndex)}text="Delete item" />
-                    
+                    <div className="task-button">
+                        <Button className="task" onSubmit={(e) => this.props.addPoint(e)} text="Add task" />
+                        <Button className="task" onSubmit={(e) => this.props.deletePoint(e,this.props.WEIndex)}text="Delete task" />
+                    </div>
 
                 </form>
             </div>

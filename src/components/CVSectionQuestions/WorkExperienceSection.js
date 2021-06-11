@@ -37,9 +37,10 @@ class WorkExperienceSection extends Component {
                 </div>
 
             
-            
-            <Button onSubmit={(e) => this.props.addWE(e)} text="Add Work Experience" />
-            <Button onSubmit={(e) => this.props.deleteWE(e)} text="Delete Work Experience" />
+            <div className="we-button">
+                <Button className="add-delete" onSubmit={(e) => this.props.addWE(e)} text="Add Work Experience" />
+                <Button className="add-delete" onSubmit={(e) => this.props.deleteWE(e)} text="Delete Work Experience" />
+            </div>
         </div>
         }
 
