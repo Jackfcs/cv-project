@@ -45,7 +45,7 @@ class WorkExperienceInstance extends Component {
                 
                 <ul className="list">
                   {item.points.map((point) => {
-                    return <span key={point.id}>- {point.point}<br/></span>;
+                    return <li key={point.id}>{point.point}<br/></li>;
                   })}
                 </ul>
               </div>

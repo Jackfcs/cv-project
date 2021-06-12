@@ -12,7 +12,7 @@ class PersonalInfo extends Component {
       if (this.props.questionState === 0) {
           pInfo = <div>
           <h3 className={this.props.className}>
-            Enter your contact information
+          Enter your contact information
           </h3>
           <Name
             inputs={this.props.inputs}

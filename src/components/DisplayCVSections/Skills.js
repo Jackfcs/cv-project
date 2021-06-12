@@ -12,9 +12,9 @@ class Skills extends Component {
             <div>
                 {result.map((item, index) => {
                     return (
-                        <div key={index}>
+                        <ul key={index}>
                             <li>{item}</li>
-                        </div>
+                        </ul>
                     )
                 })}
             </div>

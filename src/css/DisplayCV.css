@@ -13,13 +13,39 @@
 
 }
 
-.small-view {
+.cv-and-buttons{
+    height: 605px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.preview {
 
     position: absolute;
+    transform: scale(1);
+    right: 50px;
+    top: 100px;
+    z-index: 2;
+
+}
+
+.cropper{
+    width:106mm;
+    height:149mm;
+    overflow:hidden;
+}
+
+.small-view {
+
+    position: relative;
     transform: scale(0.5);
-    top: -190px;
+    right: 52.5mm;
+    bottom: 74.05mm;
+
+    /* top: -150px;
     right: -150px;
-    z-index: -1;
+    z-index: -1; */
 
 }
 
@@ -68,14 +94,7 @@
     display: none;
 }
 
-.preview {
 
-    position: absolute;
-    transform: scale(1);
-    right: 50px;
-    z-index: 2;
-
-}
 
 .cv-buttons {
     display: flex;
@@ -105,4 +124,27 @@
 
 .emailD {
     margin-bottom: 50px;
+}
+
+@media (max-width: 805px){
+
+    .display-cv-section{
+        
+    }
+
+    .cv-and-buttons{
+        margin-top: -50px;
+        height: 605px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        max-width: 210mm;
+        justify-self: center;
+    }
+
+    .cv-buttons{
+        max-width: 210mm;
+    }
+
+    
 }
