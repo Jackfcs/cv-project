@@ -1,150 +1,172 @@
+.display-cv-section {
+}
+
 #cv-display-container {
-    border: solid black 1px;
-    max-height: 296.2mm;
-    min-height: 296.2mm;
-    min-width: 210mm;
-    max-width: 210mm;
-    text-align: left;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    overflow: hidden;
-    font-family: Arial, Helvetica, sans-serif;
+  border: solid black 1px;
+  max-height: 296.2mm;
+  min-height: 296.2mm;
+  min-width: 210mm;
+  max-width: 210mm;
+  text-align: left;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cv-and-buttons {
+  height: 605px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 210mm;
+}
+
+.preview {
+  position: absolute;
+  transform: scale(1);
+  top: 80%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.cropper {
+  width: 106mm;
+  height: 149mm;
+  overflow: hidden;
+}
+
+.small-view {
+  position: relative;
+  transform: scale(0.5);
+  right: 52.5mm;
+  bottom: 74.05mm;
+
+  /* top: -150px;
+    right: -150px;
+    z-index: -1; */
+}
+
+.leftBar {
+  margin: 0;
+  background-color: rgb(18, 65, 109);
+  color: white;
+  min-width: 30%;
+  max-width: 30%;
+  min-height: 296.2mm;
+  max-height: 296.2mm;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.nameD {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.professionD {
+  font-size: 25px;
+  font-weight: 100;
+  padding: 10px 0 20px 0;
+}
+
+.titleLeft {
+  background-color: rgb(78, 82, 133);
+  width: calc(100% + 30px);
+  margin-left: -15px;
+  vertical-align: center;
+  display: flex;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contactTitle {
+  text-align: center;
+  padding: 15px;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.hide {
+  display: none;
+}
+
+.cv-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.main-content {
+  color: rgb(133, 133, 133);
+  margin: 20px;
+  width: 500px;
+}
+
+.summaryD {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.work-history-title {
+  font-size: 25px;
+  border-bottom: rgb(133, 133, 133) solid 0.5px;
+  border-top: rgb(133, 133, 133) solid 0.5px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.emailD {
+  margin-bottom: 50px;
+}
+
+.display-own-button{
+    background-color: orange;
 
 }
 
-.cv-and-buttons{
+.preview-button{
+    background-color: pink;
+}
+
+.download-button{
+    background-color: purple;
+}
+
+@media (max-width: 805px) {
+  .display-cv-section {
+    max-width: 210mm;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cv-and-buttons {
+    margin-top: -50px;
     height: 605px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+    max-width: 210mm;
+    justify-self: center;
+    margin-bottom: 100px;
+  }
 
-.preview {
+  .cv-buttons {
+    max-width: 210mm;
+  }
 
+  .preview {
+    left: 100px;
     position: absolute;
     transform: scale(1);
-    right: 50px;
-    top: 100px;
+    top: 160%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     z-index: 2;
-
-}
-
-.cropper{
-    width:106mm;
-    height:149mm;
-    overflow:hidden;
-}
-
-.small-view {
-
-    position: relative;
-    transform: scale(0.5);
-    right: 52.5mm;
-    bottom: 74.05mm;
-
-    /* top: -150px;
-    right: -150px;
-    z-index: -1; */
-
-}
-
-.leftBar {
-    margin: 0;
-    background-color: rgb(18, 65, 109);
-    color: white;
-    min-width: 30%;
-    max-width: 30%;
-    min-height: 296.2mm;
-    max-height: 296.2mm;
-    padding: 15px;
-    box-sizing: border-box;
-}
-
-.nameD {
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.professionD {
-    font-size: 25px;
-    font-weight: 100;
-    padding: 10px 0 20px 0;
-}
-
-.titleLeft {
-    background-color: rgb(78, 82, 133);
-    width: calc(100% + 30px);
-    margin-left: -15px;
-    vertical-align: center;
-    display: flex;
-    text-align: center;
-    margin-bottom: 10px;
-
-}
-
-.contactTitle {
-    text-align: center;
-    padding: 15px;
-    font-size: 25px;
-    font-weight: bolder;
-}
-
-.hide {
-    display: none;
-}
-
-
-
-.cv-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    position: relative;
-}
-
-.main-content {
-    color: rgb(133, 133, 133);
-    margin: 20px;
-    width: 500px;
-}
-
-.summaryD {
-    padding-top: 10px;
-    padding-bottom: 30px;
-}
-
-.work-history-title {
-    font-size: 25px;
-    border-bottom: rgb(133, 133, 133) solid 0.5px;
-    border-top: rgb(133, 133, 133) solid 0.5px;
-    padding: 5px;
-    margin-bottom: 20px;
-}
-
-.emailD {
-    margin-bottom: 50px;
-}
-
-@media (max-width: 805px){
-
-    .display-cv-section{
-        
-    }
-
-    .cv-and-buttons{
-        margin-top: -50px;
-        height: 605px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        max-width: 210mm;
-        justify-self: center;
-    }
-
-    .cv-buttons{
-        max-width: 210mm;
-    }
-
-    
+  }
 }

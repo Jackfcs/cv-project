@@ -134,17 +134,21 @@ class DisplayCV extends Component {
   }
 
   previewCV() {
+    const cropper = document.getElementById("cropper")
     if (this.state.cvView === "small-view") {
       this.setState({
         cvView: "preview",
         previewButtonText: "Hide Preview",
       });
+      //cropper.classList.toggle("cropper")
     } else if (this.state.cvView === "preview") {
       this.setState({
         cvView: "small-view",
         previewButtonText: "Preview CV",
       });
+      //cropper.classList.toggle("cropper")
     }
+    console.log(cropper)
   }
 
   render() {
@@ -154,16 +158,22 @@ class DisplayCV extends Component {
         <div className="cv-and-buttons">
           <div className="cv-buttons">
             <Button
+              className="display-own-button"
               onSubmit={this.displayPreview}
               text={this.state.buttonText}
             />
             <Button
+              className="preview-button"
               onSubmit={this.previewCV}
               text={this.state.previewButtonText}
             />
-            <Button onSubmit={this.generatePDF} text="Download CV" />
+            <Button 
+              className="download-button"
+              onSubmit={this.generatePDF}
+              text="Download CV" 
+            />
           </div>
-          <div className="cropper">
+          <div className="cropper" id="cropper">
           <div id="cv-display-container" className={this.state.cvView}>
             <div className="leftBar">
               <div className="nameD">
