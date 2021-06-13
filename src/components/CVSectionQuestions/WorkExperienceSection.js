@@ -12,7 +12,7 @@ class WorkExperienceSection extends Component {
         let WES
         if (this.props.questionState === 2) {
             WES = <div>
-            <h3>Enter your previous work experience</h3>
+            <h3>Enter your work experience</h3>
 
             <div>
                     

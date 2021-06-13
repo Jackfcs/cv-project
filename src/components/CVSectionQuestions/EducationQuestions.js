@@ -22,6 +22,7 @@ class EducationQuestions extends Component {
                     Start Date
                     <input
                       onChange={(e) => this.props.captureEduDate(e, index)}
+                      value={education.startDate}
                       type="month"
                       name="startDate"
                     ></input>
@@ -31,6 +32,7 @@ class EducationQuestions extends Component {
                     End Date
                     <input
                       onChange={(e) => this.props.captureEduDate(e, index)}
+                      value={education.endDate}
                       type="month"
                       name="endDate"
                     ></input>
@@ -38,16 +40,19 @@ class EducationQuestions extends Component {
 
                   <Input
                     handleChange={(e) => this.props.captureEdu(e, index)}
+                    value={education.qualification}
                     name="qualification"
                     placeholder="Qualification"
                   />
                   <Input
                     handleChange={(e) => this.props.captureEdu(e, index)}
+                    value={education.grade}
                     name="grade"
                     placeholder="Grade"
                   />
                   <Input
                     handleChange={(e) => this.props.captureEdu(e, index)}
+                    value={education.school}
                     name="school"
                     placeholder="School"
                   />

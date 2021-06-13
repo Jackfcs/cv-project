@@ -17,7 +17,7 @@ class SkillsQuestions extends Component {
             <h3>Enter your skills</h3>
 
             {this.props.skills.map((skill, index) => {
-                return <Input key={index} handleChange={(e) => this.props.captureSkill(e, index)} placeholder="Add Skill"/>
+                return <Input value={skill} key={index} handleChange={(e) => this.props.captureSkill(e, index)} placeholder="Add Skill"/>
             })}
             <div className="buttons">
                 <Button className="task" onSubmit={(e) => this.props.addSkill(e)} text="Add Skill"/>

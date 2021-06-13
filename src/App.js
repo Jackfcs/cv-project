@@ -133,7 +133,6 @@ class App extends Component {
       },
       
     });
-    console.log(skills)
   }
 
   addEdu(e){
@@ -319,8 +318,6 @@ class App extends Component {
         workExperience,
       },
     });
-    console.log('index ', index)
-    console.log('we ', we)
     }
 
   prevSection() {

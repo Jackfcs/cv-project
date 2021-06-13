@@ -33,7 +33,7 @@ class DisplayCV extends Component {
             startDate: format(new Date(2018, 1, 11), "yyyy-MM"),
             endDate: format(new Date(2020, 1, 11), "yyyy-MM"),
             points: [
-              { id: uniqid(), point: "Very good at doing the work" },
+              { id: uniqid(), point: "Recieved outstanding reviews at annual appraisals" },
               { id: uniqid(), point: "I was promoted to manage 5 people" },
               {
                 id: uniqid(),
@@ -125,30 +125,21 @@ class DisplayCV extends Component {
       },
     };
     window.html2pdf(cv, opt);
-    // if (this.state.cvView === "small-view") {
-    //   cv.className = "small-view";
-    // } else {
-    //   cv.className = "preview";
-    // }
     cv.className = this.state.cvView
   }
 
   previewCV() {
-    const cropper = document.getElementById("cropper")
     if (this.state.cvView === "small-view") {
       this.setState({
         cvView: "preview",
         previewButtonText: "Hide Preview",
       });
-      //cropper.classList.toggle("cropper")
     } else if (this.state.cvView === "preview") {
       this.setState({
         cvView: "small-view",
         previewButtonText: "Preview CV",
       });
-      //cropper.classList.toggle("cropper")
     }
-    console.log(cropper)
   }
 
   render() {
@@ -158,17 +149,17 @@ class DisplayCV extends Component {
         <div className="cv-and-buttons">
           <div className="cv-buttons">
             <Button
-              className="display-own-button"
+              className="display-own-button nav"
               onSubmit={this.displayPreview}
               text={this.state.buttonText}
             />
             <Button
-              className="preview-button"
+              className="preview-button nav"
               onSubmit={this.previewCV}
               text={this.state.previewButtonText}
             />
             <Button 
-              className="download-button"
+              className="download-button nav"
               onSubmit={this.generatePDF}
               text="Download CV" 
             />
