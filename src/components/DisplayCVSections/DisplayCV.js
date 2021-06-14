@@ -142,7 +142,10 @@ class DisplayCV extends Component {
     }
   }
 
+  
+
   render() {
+    
     const { whichView } = this;
     return (
       <div className="display-cv-section">
