@@ -29,7 +29,7 @@ This is the first full app I've created using React so there have been many skil
 
 Challenges I overcame:
 * html2pdf doesn't read/render bulletpoints. To overcome this I removed the \<ul> styling and added a unicode bullet before each line
-* How  to include multiple parameters to a function that is being passed down as props to child components
+* How  to include multiple parameters for a function that is being passed down as props to child components
 * Using nested map methods to access deeper levels of information in the state/props
 
 ## Conclusion
