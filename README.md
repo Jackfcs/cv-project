@@ -1,4 +1,4 @@
-# CV Creation Tool
+# React CV Creation Tool
 
 This is an app to create a formatted custom CV and then download it as a PDF.
 
