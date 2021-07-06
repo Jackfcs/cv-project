@@ -4,8 +4,6 @@ This is an app to create a formatted custom CV and then download it as a PDF.
 
 [Click here for a live demo.](https://jackfcs.github.io/cv-project/)
 
-The app was created using React as part of The Odin Project curriculum.
-
 I used [html2pdf](https://www.npmjs.com/package/html2pdf.js/v/0.9.0) to create the downloadable pdf of the completed CV. 
 
 ## How To Use
